@@ -1,5 +1,5 @@
 <?php
-include 'koneksi.php';
+include 'config/koneksi.php';
 
 $query = "SELECT * FROM satuan ORDER BY idsatuan ASC";
 $result = mysqli_query($koneksi, $query);
