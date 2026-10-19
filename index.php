@@ -9,36 +9,32 @@ $result = mysqli_query($koneksi, $query);
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Daftar Satuan Barang - TokoMia</title>
+    <title>Dashboard - Project Inventori TokoMia</title>
 </head>
 <body>
 
-    <h2>Daftar Satuan Barang - TokoMia</h2>
-    <a href="tambah.php">+ Tambah Satuan Baru</a><br><br>
+    <h1>Sistem Inventori Toko Mia</h1>
+    <hr>
 
-    <table border="1" cellpadding="6" cellspacing="0">
-        <thead>
-            <tr>
-                <th>No / ID</th>
-                <th>Nama Satuan</th>
-                <th>Status</th>
-                <th>Aksi</th>
-            </tr>
-        </thead>
-        <tbody>
-            <?php while ($row = mysqli_fetch_assoc($result)) : ?>
-            <tr>
-                <td><?= $row['idsatuan']; ?></td>
-                <td><?= htmlspecialchars($row['nama_satuan']); ?></td>
-                <td><?= ($row['status_satuan'] == 1) ? 'Aktif' : 'Non-Aktif'; ?></td>
-                <td>
-                    <a href="edit.php?id=<?= $row['idsatuan']; ?>">Edit</a> | 
-                    <a href="hapus.php?id=<?= $row['idsatuan']; ?>" onclick="return confirm('Yakin ingin menghapus data ini?');">Hapus</a>
-                </td>
-            </tr>
-            <?php endwhile; ?>
-        </tbody>
-    </table>
+    <h3> Master Data</h3>
+    <ul>
+        <li><a href="satuan.php">Master Satuan</a></li>
+        <li><a href="barang.php">Master Barang</a></li>
+        <li><a href="vendor.php">Master Vendor</a></li>
+        <li><a href="user.php">Master User</a></li>
+        <li><a href="role.php">Master Role</a></li>
+                           
+        
+    </ul>
+
+    <h3> Laporan</h3>
+    <ul>
+        <li><a href="lap.view/satuan_vu.php">Laporan Satuan </a></li>
+        <li><a href="lap.view/barang_vu.php">Laporan Barang </a></li>
+        <li><a href="lap.view/vendor_vu.php">Laporan Vendor </a></li>
+        <li><a href="lap.view/role_vu.php">Laporan Role </a></li>
+        <li><a href="lap.view/user_vu.php">Laporan User </a></li>
+    </ul>
 
 </body>
 </html>
